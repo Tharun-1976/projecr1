@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPulse - Fitness Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Fit<span>Pulse</span>
+    </div>
+
+    <div class="nav-buttons">
+
+        <button onclick="showPage('home')">
+            Home
+        </button>
+
+        <button onclick="showPage('register')">
+            Register
+        </button>
+
+        <button onclick="showPage('login')">
+            Sign In
+        </button>
+
+        <button onclick="showPage('dashboard')">
+            Trainee
+        </button>
+
+        <button onclick="showPage('coach')">
+            Coach
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+                💪
+            </div>
+
+            <h1>
+                Track Your Fitness Journey
+            </h1>
+
+            <p>
+                Monitor your calories, steps, workouts,
+                water intake and fitness progress
+                in one place.
+            </p>
+
+            <button class="main-btn"
+                    onclick="showPage('register')">
+
+                Get Started
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card blue">
+
+            <div class="feature-icon">
+                🔥
+            </div>
+
+            <h3>
+                Calories
+            </h3>
+
+            <p>
+                Track calories burned and consumed.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card green">
+
+            <div class="feature-icon">
+                👟
+            </div>
+
+            <h3>
+                Steps
+            </h3>
+
+            <p>
+                Track your daily walking activity.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card purple">
+
+            <div class="feature-icon">
+                🏋️
+            </div>
+
+            <h3>
+                Workouts
+            </h3>
+
+            <p>
+                Record your daily exercises.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card pink">
+
+            <div class="feature-icon">
+                💧
+            </div>
+
+            <h3>
+                Water
+            </h3>
+
+            <p>
+                Maintain your daily hydration.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section id="register" class="page">
+
+    <div class="form-container">
+
+        <div class="form-box">
+
+            <h2>
+                Create Account
+            </h2>
+
+            <p class="form-subtitle">
+                Start your fitness journey today
+            </p>
+
+
+            <label>
+                Full Name
+            </label>
+
+            <input type="text"
+                   id="name"
+                   placeholder="Enter your name">
+
+
+            <label>
+                Email
+            </label>
+
+            <input type="email"
+                   id="email"
+                   placeholder="Enter your email">
+
+
+            <label>
+                Age
+            </label>
+
+            <input type="number"
+                   id="age"
+                   placeholder="Enter age">
+
+
+            <label>
+                Height
+            </label>
+
+            <input type="number"
+                   id="height"
+                   placeholder="Height in cm">
+
+
+            <label>
+                Weight
+            </label>
+
+            <input type="number"
+                   id="weight"
+                   placeholder="Weight in kg">
+
+
+            <label>
+                Fitness Goal
+            </label>
+
+            <select id="goal">
+
+                <option value="">
+                    Select Goal
+                </option>
+
+                <option>
+                    Weight Loss
+                </option>
+
+                <option>
+                    Muscle Gain
+                </option>
+
+                <option>
+                    Maintain Fitness
+                </option>
+
+            </select>
+
+
+            <label>
+                Password
+            </label>
+
+            <input type="password"
+                   id="password"
+                   placeholder="Create password">
+
+
+            <label>
+                Confirm Password
+            </label>
+
+            <input type="password"
+                   id="confirmPassword"
+                   placeholder="Confirm password">
+
+
+            <button class="form-btn"
+                    onclick="register()">
+
+                Create Account
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section id="login" class="page">
+
+    <div class="form-container">
+
+        <div class="form-box login-box">
+
+            <div class="login-icon">
+                🔐
+            </div>
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p class="form-subtitle">
+                Login to your FitPulse account
+            </p>
+
+
+            <label>
+                Email
+            </label>
+
+            <input type="email"
+                   id="loginEmail"
+                   placeholder="Enter email">
+
+
+            <label>
+                Password
+            </label>
+
+            <input type="password"
+                   id="loginPassword"
+                   placeholder="Enter password">
+
+
+            <button class="form-btn"
+                    onclick="login()">
+
+                Sign In
+
+            </button>
+
+
+            <button class="demo-btn"
+                    onclick="demoLogin()">
+
+                Demo Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section id="dashboard" class="page">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <p class="small-title">
+                TRAINEE DASHBOARD
+            </p>
+
+            <h1>
+                Welcome to FitPulse 👋
+            </h1>
+
+            <p>
+                Track your daily fitness activity.
+            </p>
+
+        </div>
+
+        <div class="date-box">
+            📅 <span id="today"></span>
+        </div>
+
+    </div>
+
+
+    <!-- STAT CARDS -->
+
+    <div class="stats-grid">
+
+
+        <!-- CALORIES -->
+
+        <div class="stat-card calorie-card">
+
+            <div class="stat-icon">
+                🔥
+            </div>
+
+            <h3>
+                Calories Burned
+            </h3>
+
+            <div class="stat-value"
+                 id="calories">
+
+                500
+
+            </div>
+
+            <p>
+                kcal today
+            </p>
+
+            <div class="card-buttons">
+
+                <button onclick="changeCalories(-100)">
+                    -100
+                </button>
+
+                <button onclick="changeCalories(100)">
+                    +100
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STEPS -->
+
+        <div class="stat-card steps-card">
+
+            <div class="stat-icon">
+                👟
+            </div>
+
+            <h3>
+                Daily Steps
+            </h3>
+
+            <div class="stat-value"
+                 id="steps">
+
+                5000
+
+            </div>
+
+            <p>
+                steps
+            </p>
+
+            <div class="card-buttons">
+
+                <button onclick="addSteps()">
+                    +1000
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIVE TIME -->
+
+        <div class="stat-card active-card">
+
+            <div class="stat-icon">
+                ⏱️
+            </div>
+
+            <h3>
+                Active Time
+            </h3>
+
+            <div class="stat-value"
+                 id="active">
+
+                30
+
+            </div>
+
+            <p>
+                minutes
+            </p>
+
+            <div class="card-buttons">
+
+                <button onclick="addActive()">
+                    +15 Min
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- INTAKE -->
+
+        <div class="stat-card intake-card">
+
+            <div class="stat-icon">
+                🍎
+            </div>
+
+            <h3>
+                Calorie Intake
+            </h3>
+
+            <div class="stat-value"
+                 id="intake">
+
+                1800
+
+            </div>
+
+            <p>
+                kcal today
+            </p>
+
+            <div class="card-buttons">
+
+                <button onclick="addIntake(250)">
+                    +250
+                </button>
+
+                <button onclick="addIntake(500)">
+                    +500
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SECOND ROW -->
+
+    <div class="dashboard-grid">
+
+
+        <!-- WATER -->
+
+        <div class="dashboard-card water-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-icon">
+                        💧
+                    </span>
+
+                    <h2>
+                        Water Tracker
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="water-circle">
+
+                <div class="water-number"
+                     id="water">
+
+                    1500
+
+                </div>
+
+                <span>
+                    ml
+                </span>
+
+            </div>
+
+
+            <div class="water-progress">
+
+                <div id="waterProgress">
+                </div>
+
+            </div>
+
+
+            <p class="water-goal">
+                Daily Goal: 2500 ml
+            </p>
+
+
+            <div class="water-buttons">
+
+                <button onclick="changeWater(-250)">
+                    − 250 ml
+                </button>
+
+                <button onclick="changeWater(250)">
+                    + 250 ml
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BMI -->
+
+        <div class="dashboard-card bmi-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="section-icon">
+                        📊
+                    </span>
+
+                    <h2>
+                        BMI Calculator
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="bmi-inputs">
+
+                <input type="number"
+                       id="bmiHeight"
+                       placeholder="Height (cm)">
+
+                <input type="number"
+                       id="bmiWeight"
+                       placeholder="Weight (kg)">
+
+            </div>
+
+
+            <button class="calculate-btn"
+                    onclick="calculateBMI()">
+
+                Calculate BMI
+
+            </button>
+
+
+            <div id="bmiResult"
+                 class="bmi-result">
+
+                Enter your details
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WORKOUT LOGGER -->
+
+    <div class="dashboard-card workout-section">
+
+        <div class="section-title">
+
+            <div>
+
+                <span class="section-icon">
+                    🏋️
+                </span>
+
+                <h2>
+                    Workout Logger
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="workout-form">
+
+            <input type="text"
+                   id="exercise"
+                   placeholder="Exercise name">
+
+
+            <input type="number"
+                   id="duration"
+                   placeholder="Duration (minutes)">
+
+
+            <input type="number"
+                   id="workoutWeight"
+                   placeholder="Weight (kg)">
+
+
+            <button onclick="saveWorkout()">
+
+                Save Workout
+
+            </button>
+
+        </div>
+
+
+        <div id="workoutMessage"
+             class="workout-message">
+        </div>
+
+
+        <div id="workoutList"
+             class="workout-list">
+        </div>
+
+    </div>
+
+
+    <!-- WEEKLY CHART -->
+
+    <div class="dashboard-card chart-section">
+
+        <div class="section-title">
+
+            <div>
+
+                <span class="section-icon">
+                    📈
+                </span>
+
+                <h2>
+                    Weekly Calories
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart">
+
+            <div class="chart-bar"
+                 style="height:70px">
+
+                <span>
+                    350
+                </span>
+
+            </div>
+
+
+            <div class="chart-bar"
+                 style="height:110px">
+
+                <span>
+                    550
+                </span>
+
+            </div>
+
+
+            <div class="chart-bar"
+                 style="height:90px">
+
+                <span>
+                    450
+                </span>
+
+            </div>
+
+
+            <div class="chart-bar"
+                 style="height:140px">
+
+                <span>
+                    700
+                </span>
+
+            </div>
+
+
+            <div class="chart-bar"
+                 style="height:120px">
+
+                <span>
+                    600
+                </span>
+
+            </div>
+
+
+            <div class="chart-bar"
+                 style="height:165px">
+
+                <span>
+                    820
+                </span>
+
+            </div>
+
+
+            <div class="chart-bar"
+                 style="height:150px">
+
+                <span>
+                    750
+                </span>
+
+            </div>
+            <div class="chart-bar"
+                 style="height:150px">
+
+                <span>
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-days">
+
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+            <span>Today</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECOMMENDATION -->
+
+    <div class="recommendation">
+
+        <div class="recommend-icon">
+            💡
+        </div>
+
+        <div>
+
+            <h3>
+                Today's Recommendation
+            </h3>
+
+            <p id="recommendationText">
+                Keep moving! Try to complete at least
+                8,000 steps today and drink enough water.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COACH ================= -->
+
+<section id="coach" class="page">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <p class="small-title">
+                COACH MODULE
+            </p>
+
+            <h1>
+                Exercise Library
+            </h1>
+
+            <p>
+                Manage exercises and trainee information.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-card">
+
+        <h2>
+            Add New Exercise
+        </h2>
+
+
+        <div class="workout-form">
+
+            <input type="text"
+                   id="newExercise"
+                   placeholder="Exercise name">
+
+            <input type="text"
+                   id="exerciseCategory"
+                   placeholder="Category">
+
+            <button onclick="addExercise()">
+                Add Exercise
+            </button>
+
+        </div>
+
+
+        <div id="exerciseList"
+             class="exercise-list">
+
+            <div class="exercise-item">
+                <span>
+                    Running
+                </span>
+
+                <small>
+                    Cardio
+                </small>
+            </div>
+
+
+            <div class="exercise-item">
+                <span>
+                    Squats
+                </span>
+
+                <small>
+                    Strength
+                </small>
+            </div>
+
+
+            <div class="exercise-item">
+                <span>
+                    Push Ups
+                </span>
+
+                <small>
+                    Strength
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        Fit<span>Pulse</span>
+    </h3>
+
+    <p>
+        Smart Fitness & Health Tracking Platform
+    </p>
+
+    <p>
+        © 2026 FitPulse. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
